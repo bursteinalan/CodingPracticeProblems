@@ -19,7 +19,35 @@ def problem1(n):
         return ans;
 
 
-def problem2():
+def problem2(digits):
+
+        #phone layout
+        phone = {
+            '2': 'abc',
+            '3': 'def',
+            '4': 'ghi',
+            '5': 'jkl',
+            '6': 'mno',
+            '7': 'pqrs',
+            '8': 'tuv',
+            '9': 'wxyz'
+            }
+        
+        #empty array to hold all combos
+        all_combos = ['']
+
+
+        for digit in digits:
+            curr_combo = list()
+            
+            for letter in phone[digit]:
+                    
+                for combo in all_combos: 
+                    curr_combo.append(combo + letter)
+                    
+            all_combos = curr_combo
+            
+        return all_combos
 
 def main():
 	# p1_1 = problem1(12)
